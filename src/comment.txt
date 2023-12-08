@@ -1,0 +1,70 @@
+A specification for each of the methods
+
+1. displayCharacterInfo()
+    - Preconditions: ไม่มี
+    - Postconditions: แสดงข้อมูลของตัวละคร, อาจมีการแสดงผลข้อมูลละครที่ปรับปรุง (เช่น เลเวลที่เพิ่มขึ้น)
+    - Side Effects: ไม่มี
+
+2. levelUp()
+    - Preconditions: ตัวละครต้องมีอย่างน้อย 1 จุดประสบการณ์ (experience point)
+    - Postconditions: เลเวลของตัวละครเพิ่มขึ้น 1, ลบจุดประสบการณ์ที่ใช้
+    - Side Effects: อาจมีการปรับปรุงค่าอื่น ๆ ตามเงื่อนไขของการเพิ่มเลเวล
+
+3. gainExperience(int experiencePoints)
+    - Preconditions: experiencePoints ต้องเป็นจำนวนเต็มบวก
+    - Postconditions: จุดประสบการณ์ของตัวละครเพิ่มขึ้นตามจำนวนที่ระบุ
+    - Side Effects: ไม่มี
+
+4. takeDamage(int damage)
+    - Preconditions: damage ต้องเป็นจำนวนเต็มบวก
+    - Postconditions: health ของตัวละครลดลงตามจำนวนที่ระบุ, ถ้า health ลดไปเป็นลบหรือเท่ากับศูนย์ ตัวละครถือว่าตาย
+    - Side Effects: ไม่มี
+
+5. isAlive()
+    - Preconditions: ไม่มี
+    - Postconditions: คืนค่า true ถ้าตัวละครยังมีชีวิต, false ถ้าตัวละครตาย
+    - Side Effects: ไม่มี
+
+6. useSlashAttack()
+    - Preconditions: ไม่มี
+    - Postconditions: ส่งผลต่อศัตรูด้วยการโจมตีด้วยดาบ, อาจทำให้ศัตรูลด health
+    - Side Effects: ไม่มี
+
+7. useSpecialAbility()
+    - Preconditions: ไม่มี
+    - Postconditions: ส่งผลต่อศัตรูด้วยทักษะพิเศษ, อาจทำให้ศัตรูลด health หรือได้รับผลกระทบเพิ่มเติม
+    - Side Effects: อาจมีผลกระทบต่อสภาพของตัวละคร (เช่น ใช้พลัง, อยู่ในสถานะเฉพาะ)
+
+8. displayAccessoryInfo()
+    - Preconditions: ไม่มี
+    - Postconditions: แสดงข้อมูลเกี่ยวกับอุปกรณ์เสริม
+    - Side Effects: ไม่มี
+
+9. applyEffect(RPGCharacter character)
+    - Preconditions: ไม่มี
+    - Postconditions: ใช้เอฟเฟ็กต์พิเศษของอุปกรณ์เสริมต่อตัวละคร
+    - Side Effects: อาจทำให้ตัวละครได้รับผลกระทบเพิ่มเติม (เช่น ได้รับการเสริมพลัง)
+
+review the code
+
+1. การใช้ Interface:
+    - ดี: การนำเสนอ Interface ให้เหมาะสมกับโครงสร้างของเกม RPG ทำให้โค้ดมีความยืดหยุ่น และง่ายต่อการเพิ่มหรือปรับเปลี่ยนความสามารถใหม่ๆ ในอนาคต
+    - แนะนำ: ตรวจสอบว่า Interface ได้ถูกออกแบบอย่างเหมาะสมต่อการเขียนโค้ดในลักษณะของเกม RPG ที่คุณต้องการ
+
+2. การใช้งาน Class และ Interface:
+    - ดี: การสร้าง class ที่ทำหน้าที่ต่างๆ อย่าง `WarriorCharacter`, `MageCharacter`, `IronGauntlet`, และ `MagicRing` ช่วยให้โค้ดมีการแยกส่วนแยกหน้าและมีความชัดเจน
+    - แนะนำ: ควรตรวจสอบว่าแต่ละ class มีความสัมพันธ์และการใช้งาน Interface ที่ถูกต้อง
+
+3. การใช้งาน Method:
+    - **ดี:** การนำเสนอ method ที่เหมาะสมต่อลักษณะของตัวละครและอุปกรณ์เสริมในโลก RPG
+    - **แนะนำ:** ตรวจสอบความเหมาะสมของการตั้งชื่อ method และตรวจสอบว่า method ต่างๆ ได้รับการนำไปใช้งานอย่างถูกต้อง
+
+4. การทำงานของ Method:
+    - ดี: การสร้าง implementation ของ method ที่สอดคล้องกับลักษณะของการใช้งาน
+    - แนะนำ: ควรตรวจสอบการทำงานของ method และตรวจสอบว่ามีความถูกต้องทุกประการ
+
+5. ความเข้าใจ:
+    - ดี: การเข้าใจและนำเสนอโค้ดในลักษณะที่เข้าใจได้ง่าย
+    - แนะนำ: ทำการเขียนคำอธิบายที่ชัดเจนในโค้ดเพื่อช่วยให้ผู้อื่นที่อ่านโค้ดเข้าใจได้ง่ายขึ้น
+
+
